@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="x-icon">
+    <title>Codex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+<style>
+    *{
+      box-sizing: border-box;
+      font-family: 'Playfair Display', serif;
+    }
+    .mySlides{
+      display: none;
+    }
+    body,html{
+        height:100%;
+        margin:0;
+    }
+    .banner{
+        background-image:url(images/background.jpeg);
+        position: relative;
+        opacity: 0.8;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 30%;
+    }
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+     }
+     .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+     .dot {
+        height: 5px;
+        width: 5px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+     }
+
+    .active {
+        background-color:#717171;
+     }
+
+    .fade {
+        animation-name: fade;
+        animation-duration: 6.0s;
+      }
+
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
+</style>
+</head>
+<body>
+    <div class="banner">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="images/favicon.png" alt="codexlogi" width="20px" height="20px"></a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.htm">About</a></li>
+            <li><a href="#">Community</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Domains<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Competitive Coding</a></li>
+                <li><a href="#">App Development</a></li>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">AI/ML</a></li>
+                <li><a href="#">Content Writing</a></li>
+                <li><a href="#">Public Relations</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="event.htm">Events</a>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact us</a>
+            </li>
+
+          </ul>
+        </div>
+    </nav>
+    <h1 class="centered" style="color:whitesmoke;font-size:60px;">EVENTS</h1>
+</div>
+<br>
+<br>
+<div class="centered">
+</div>
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <img src="images/induction1.jpg" style="width:100%;height:500px;">
+    <div class="centered">
+    <h1 style="text-align: center;background-color:cornsilk;padding:15px;">INDUCTION</h1>
+  </div>
+</div>
+  
+  <div class="mySlides fade">
+    <img src="images/Induction-2.png" style="width:100%;height:500px;">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="images/flutter-workshop.png" style="width:100%;height:500px;">
+    <div class="centered">
+    <h1 style="text-align: center;background-color:cornsilk;padding:15px;">FLUTTER WORKSHOP</h1>
+  </div>
+</div>
+  
+  <div class="mySlides fade">
+    <img src="images/flutter-workshop-2.png" style="width:100%;height:500px;">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="images/flutter-workshop-3.png" style="width:100%;height:500px;">
+  </div>
+  
+  <div class="mySlides fade">
+    <img src="images/flutter-workshop-4.png" style="width:100%;height:500px;">
+  </div>
+
+  </div>
+  <br>
+  
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+  </div>
+  
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) 
+       {
+          slides[i].style.display = "none";  
+       }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 6000); 
+    }
+    </script>
+</body>
+</html>
